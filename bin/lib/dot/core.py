@@ -379,7 +379,7 @@ def make_pull(base_dir, env):
         os.chdir(os.path.join(base_dir, env))
         if _current_env_has_remote_upstream():
             log_verbose('Making pull in "{0}":'.format(env))
-            process = subprocess.Popen(['git', 'pull'],
+            process = subprocess.Popen(['git', 'pull', 'origin'],
                                    stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
             for line in process.stdout:
                 log_verbose(' ' * 4 + line.strip())
